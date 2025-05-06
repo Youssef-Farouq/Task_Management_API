@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace TaskManagementAPI.Models
+namespace TaskManager.Models
 {
     public class TaskItem
     {
@@ -8,10 +8,10 @@ namespace TaskManagementAPI.Models
 
         [Required]
         [StringLength(100)]
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
 
         [StringLength(500)]
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         [Required]
         public TaskStatus Status { get; set; }
@@ -23,8 +23,9 @@ namespace TaskManagementAPI.Models
 
     public enum TaskStatus
     {
-        Todo,
+        Pending,
         InProgress,
-        Completed
+        Completed,
+        Cancelled
     }
 } 

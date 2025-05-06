@@ -1,17 +1,41 @@
-namespace TaskManagementAPI.Models
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace TaskManager.Models
 {
     public class RefreshToken
     {
+        [Key]
         public int Id { get; set; }
-        public string Token { get; set; }
-        public DateTime ExpiryDate { get; set; }
-        public string UserId { get; set; }
-        public bool IsRevoked { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public string CreatedByIp { get; set; }
+
+        [Required]
+        public string Token { get; set; } = string.Empty;
+
+        [Required]
+        public DateTime ExpiresAt { get; set; }
+
+        [Required]
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
         public DateTime? RevokedAt { get; set; }
-        public string RevokedByIp { get; set; }
-        public string ReplacedByToken { get; set; }
-        public string ReasonRevoked { get; set; }
+
+        public string? ReplacedByToken { get; set; }
+
+        public string? ReasonRevoked { get; set; }
+
+        [Required]
+        public bool IsExpired => DateTime.UtcNow >= ExpiresAt;
+
+        [Required]
+        public bool IsRevoked => RevokedAt != null;
+
+        [Required]
+        public bool IsActive => !IsRevoked && !IsExpired;
+
+        [Required]
+        public int UserId { get; set; }
+
+        [ForeignKey(nameof(UserId))]
+        public User User { get; set; } = null!;
     }
 } 

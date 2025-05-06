@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "YOFw1A/IAuht7VJVxTFwpAN04xpbeG0ORZ6UUzRzyfs=",
-  "Source": "TaskManagementAPI",
-  "BasePath": "_content/TaskManagementAPI",
+  "Hash": "4WgTyjTX3/LxW7sENFXYcifsk1f8NKNqQBujAKOQj9s=",
+  "Source": "TaskManager",
+  "BasePath": "_content/TaskManager",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

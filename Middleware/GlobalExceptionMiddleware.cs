@@ -1,7 +1,7 @@
 using System.Net;
 using System.Text.Json;
 
-namespace TaskManagementAPI.Middleware
+namespace TaskManager.Middleware
 {
     public class GlobalExceptionMiddleware
     {
@@ -9,7 +9,10 @@ namespace TaskManagementAPI.Middleware
         private readonly ILogger<GlobalExceptionMiddleware> _logger;
         private readonly IWebHostEnvironment _env;
 
-        public GlobalExceptionMiddleware(RequestDelegate next, ILogger<GlobalExceptionMiddleware> logger, IWebHostEnvironment env)
+        public GlobalExceptionMiddleware(
+            RequestDelegate next,
+            ILogger<GlobalExceptionMiddleware> logger,
+            IWebHostEnvironment env)
         {
             _next = next;
             _logger = logger;
@@ -38,9 +41,11 @@ namespace TaskManagementAPI.Middleware
             {
                 StatusCode = context.Response.StatusCode,
                 Message = _env.IsDevelopment() 
-                    ? $"An error occurred: {exception.Message}" 
+                    ? exception.Message 
                     : "An error occurred while processing your request.",
-                DetailedMessage = _env.IsDevelopment() ? exception.ToString() : null
+                DetailedMessage = _env.IsDevelopment() 
+                    ? exception.ToString() 
+                    : null
             };
 
             var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };

@@ -1,0 +1,8 @@
+P:\Konecta\Backend Hand on\obj\Debug\net7.0\TaskManager.csproj.AssemblyReference.cache
+P:\Konecta\Backend Hand on\obj\Debug\net7.0\TaskManager.GeneratedMSBuildEditorConfig.editorconfig
+P:\Konecta\Backend Hand on\obj\Debug\net7.0\TaskManager.AssemblyInfoInputs.cache
+P:\Konecta\Backend Hand on\obj\Debug\net7.0\TaskManager.AssemblyInfo.cs
+P:\Konecta\Backend Hand on\obj\Debug\net7.0\TaskManager.csproj.CoreCompileInputs.cache
+P:\Konecta\Backend Hand on\obj\Debug\net7.0\TaskManager.MvcApplicationPartsAssemblyInfo.cs
+P:\Konecta\Backend Hand on\obj\Debug\net7.0\TaskManager.MvcApplicationPartsAssemblyInfo.cache
+P:\Konecta\Backend Hand on\obj\Debug\net7.0\TaskManager.sourcelink.json
